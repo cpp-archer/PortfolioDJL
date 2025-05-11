@@ -11,9 +11,23 @@ app.listen(PORT, () => {
 
 
 app.get('/', (req, res) => {    
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'home.html'));
 });
-app.get('/style.css', (req, res) => {    
-    res.sendFile(path.join(__dirname, 'style.css'));
-} );
 
+
+app.get('/projets', (req, res) => {    
+    res.sendFile(path.join(__dirname, 'projets.html'));
+});
+
+app.get('/contacts', (req, res) => {    
+    res.sendFile(path.join(__dirname, 'contacts.html'));
+});
+
+function myFunction() {
+  var x = document.getElementById("details");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
