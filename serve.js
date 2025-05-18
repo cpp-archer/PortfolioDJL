@@ -4,6 +4,7 @@ const PORT = 3000;
 const app = express();
 const path = require('path');
 
+app.use(express.static(__dirname));
 
 app.listen(PORT, () => {
     console.log(`Ca marche sur le port ${PORT}`);
@@ -23,7 +24,14 @@ app.get('/contacts', (req, res) => {
     res.sendFile(path.join(__dirname, 'contacts.html'));
 });
 
-function myFunction() {
+
+app.get('/projetsUni', (req, res) => {    
+    res.sendFile(path.join(__dirname, '/projetsUni.html'));
+});
+
+
+
+function toggleDetails() {
   var x = document.getElementById("details");
   if (x.style.display === "none") {
     x.style.display = "block";
